@@ -285,8 +285,6 @@ void MainWindow::init(AnyOption *opts)
 #endif
     view->settings()->setAttribute(QWebSettings::SiteSpecificQuirksEnabled, true);
 
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::TiledBackingStoreEnabled, true);
-
     if (qwkSettings->getBool("inspector/enable")) {
         view->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 
