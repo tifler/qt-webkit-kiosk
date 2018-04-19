@@ -218,8 +218,6 @@ void MainWindow::init(AnyOption *opts)
     view->setSettings(qwkSettings);
     view->setPage(new QWebPage(view));
 
-    view->setResizesToContents(true);
-
     // --- Disk cache --- //
     if (qwkSettings->getBool("cache/enable")) {
         diskCache = new QNetworkDiskCache(this);
@@ -288,7 +286,6 @@ void MainWindow::init(AnyOption *opts)
     view->settings()->setAttribute(QWebSettings::SiteSpecificQuirksEnabled, true);
 
     QWebSettings::globalSettings()->setAttribute(QWebSettings::TiledBackingStoreEnabled, true);
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::FrameFlatteningEnable, true);
 
     if (qwkSettings->getBool("inspector/enable")) {
         view->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
