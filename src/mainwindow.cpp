@@ -285,6 +285,9 @@ void MainWindow::init(AnyOption *opts)
 #endif
     view->settings()->setAttribute(QWebSettings::SiteSpecificQuirksEnabled, true);
 
+    view->settings()->setAttribute(QWebSettings::TiledBackingStoreEnabled, true);
+    view->settings()->setAttribute(QWebSettings::FrameFlatteningEnable, true);
+
     if (qwkSettings->getBool("inspector/enable")) {
         view->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 
